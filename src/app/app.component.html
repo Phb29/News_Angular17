@@ -1,0 +1,49 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"> 
+<h1>Teste if else</h1>
+<!-- NOVO IF-->
+@if(verdadeiro){
+<span>é verdadeiro</span>
+}
+@else{
+<span>é Falso</span>
+}
+<!-- "Velho"-->
+<span *ngIf="verdadeiro">
+verdadeiro com ngIf
+</span>
+
+ 
+
+<!-- Switch-->
+
+<h1> Testando Switch</h1>
+@switch(level){
+@case('senior'){
+<span> Nivel Senior</span>
+}
+@case('pleno'){
+<span>Nivel pleno</span>
+}
+@default{
+<span>Nivel Junior</span>
+}
+}
+<!-- for-->
+<h1>Testando  for</h1>
+
+@for(anime of animes; track $index){
+<span>{{anime}},</span>
+}@empty{
+<p>lista esta vazia</p>
+}
+
+  <h3>Testando Deferrable View</h3>
+@defer(on viewport){
+<app-anime></app-anime>
+}
+@placeholder{
+<span>Carregando</span>
+}
+</div>
+
+<router-outlet />
